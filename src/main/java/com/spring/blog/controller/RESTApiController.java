@@ -31,16 +31,16 @@ public class RESTApiController {
 
     @RequestMapping(value = "/person", method = RequestMethod.GET)
     public PersonDTO person(){
-        PersonDTO p = PersonDTO.builder().id(1L).name("좋코더").age(20).build();
+        PersonDTO p = PersonDTO.builder().id(1L).title("좋코더").spectator(20).build();
         return p;
     }
 
     // 상태코드까지 함께 리턴할 수 있는 ResponseEntity<> 를 리턴자료형으로 지정.
-    @GetMapping("/person-list")
+    @GetMapping("/movie-list")
     public ResponseEntity<?> personList(){
-        PersonDTO p = PersonDTO.builder().id(1L).name("깍깎").age(10).build();
-        PersonDTO p2 = PersonDTO.builder().id(2L).name("짹짹이").age(20).build();
-        PersonDTO p3 = PersonDTO.builder().id(3L).name("뭄무이").age(30).build();
+        PersonDTO p = PersonDTO.builder().id(1L).title("서울의 봄").spectator(13125483).build();
+        PersonDTO p2 = PersonDTO.builder().id(2L).title("범죄도시3").spectator(18682813).build();
+        PersonDTO p3 = PersonDTO.builder().id(3L).title("엘리멘탈").spectator(7239307).build();
         List<PersonDTO> personList = List.of(p, p2, p3);
 
         // .ok()는 200코드를 반환하고, 뒤에 연달아 붙은 body()에 실제 리턴자료를 입력합니다.
