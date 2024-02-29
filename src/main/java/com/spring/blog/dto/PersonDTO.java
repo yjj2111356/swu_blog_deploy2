@@ -5,6 +5,6 @@ import lombok.*;
 @Getter @Setter @AllArgsConstructor @NoArgsConstructor @Builder @ToString
 public class PersonDTO {
     private long id;
-    private String name;
-    private int age;
+    private String title;
+    private int spectator;
 }
